@@ -14,12 +14,13 @@ public:
 	Character(int, int); 
 	int getArmor(); 
 	int getStregthPoints(); 
-	
+	void setStrength(); 
+	void setArmor(); 
 
 
-	virtual int makeAttack();
-	virtual int makeDefense(); 
-	virtual void specialAbility(); 
+	virtual void makeAttack();
+	//virtual int makeDefense(); 
+	//virtual void specialAbility(); 
 
 
 

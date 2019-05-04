@@ -27,10 +27,9 @@ int Character::getStregthPoints()
 }
 
 
-
-int Character::makeAttack() { return 0; }
-int Character::makeDefense() { return 0; }
-void Character::specialAbility() {}; 
+void Character::makeAttack() {  }
+//int Character::makeDefense() { return 0; }
+//void Character::specialAbility() {}; 
 
 Character::~Character()
 {
