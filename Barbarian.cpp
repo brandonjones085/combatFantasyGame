@@ -27,8 +27,16 @@ void Barbarian::makeAttack()
 	std::cout << "Barbarian attack " << std::endl; 
 	std::cout << "Roll 1: " << roll1 << std::endl; 
 	std::cout << "Roll 2: " << roll2 << std::endl;
+
+	int total = roll1 + roll2; 
+	setTotalAttack(total); 
 	std::cout << std::endl; 
 	
+}
+
+int Barbarian::getTotalAttack()
+{
+	return totalAttack; 
 }
 
 int Barbarian::makeDefense()

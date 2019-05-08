@@ -7,18 +7,20 @@ protected:
 	int defense; 
 	int armor; 
 	int strengthPoints; 
+	int totalAttack; 
 
 
 public:
 	Character();
 	Character(int, int); 
 	int getArmor(); 
-	int getStregthPoints(); 
-	void setStrength(); 
-	void setArmor(); 
 
-
+	virtual int getDefensePoints(); 
+	virtual int getStregthPoints(); 
+	virtual void setStregthPoints(int);
 	virtual void makeAttack();
+	virtual  void setTotalAttack(int); 
+	virtual int getTotalAttack(); 
 	//virtual int makeDefense(); 
 	//virtual void specialAbility(); 
 

@@ -9,6 +9,8 @@ public:
 
 	virtual void makeAttack();
 	virtual int makeDefense();
+	//virtual void setTotalAttack(int);
+	//virtual int getTotalAttack();
 	//virtual void specialAbility();
 	~HarryPotter();
 };

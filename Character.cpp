@@ -26,6 +26,27 @@ int Character::getStregthPoints()
 	return strengthPoints; 
 }
 
+void Character::setStregthPoints(int a)
+{
+	this->strengthPoints = a; 
+}
+
+int Character::getDefensePoints()
+{
+	return defense; 
+}
+
+
+void Character::setTotalAttack(int t)
+{
+	this->totalAttack = t; 
+}
+
+
+int Character::getTotalAttack()
+{
+	return totalAttack; 
+}
 
 void Character::makeAttack() {  }
 //int Character::makeDefense() { return 0; }

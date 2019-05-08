@@ -9,6 +9,7 @@ class Game
 private: 
 	Character *attacker; 
 	Character *opponent; 
+	 
 
 
 
@@ -19,6 +20,8 @@ public:
 	void setAttacker(Character*); 
 	void setOpponent(Character*); 
 	
+	 
+
 	~Game();
 };
 
