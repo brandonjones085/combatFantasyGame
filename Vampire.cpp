@@ -16,7 +16,7 @@ Vampire::Vampire()
 void Vampire::makeAttack()
 {
 	int roll1 = std::rand() % 12 + 1;
-	std::cout << "Vampire attack " << std::endl; 
+	std::cout << "Vampire attack\n " << std::endl; 
 	std::cout << "Roll 1: " << roll1 << std::endl;
 	
 	std::cout << std::endl;
