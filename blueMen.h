@@ -11,9 +11,9 @@ class blueMen : public Character
 public:
 	blueMen();
 	virtual void makeAttack();
-	virtual int makeDefense();
-	//virtual void setTotalAttack(int);
-	//virtual int getTotalAttack();
+	virtual void makeDefense(int);
+	
+	virtual int getTotalAttack();
 	//virtual void specialAbility();
 	~blueMen();
 };

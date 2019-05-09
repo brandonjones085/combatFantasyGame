@@ -49,8 +49,9 @@ int Character::getTotalAttack()
 }
 
 void Character::makeAttack() {  }
-//int Character::makeDefense() { return 0; }
-//void Character::specialAbility() {}; 
+void Character::makeDefense(int i) {  }
+
+void Character::specialAbility() {}; 
 
 Character::~Character()
 {

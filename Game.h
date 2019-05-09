@@ -9,6 +9,7 @@ class Game
 private: 
 	Character *attacker; 
 	Character *opponent; 
+	bool game = true; 
 	 
 
 

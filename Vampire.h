@@ -11,10 +11,10 @@ public:
 	Vampire();
 
 	virtual void makeAttack();
-	virtual int makeDefense();
-	//virtual void setTotalAttack(int);
-	//virtual int getTotalAttack();
-	//virtual void specialAbility();
+	virtual void makeDefense(int);
+	
+	virtual int getTotalAttack();
+	virtual void specialAbility();
 	~Vampire();
 };
 

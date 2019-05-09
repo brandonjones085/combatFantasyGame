@@ -39,9 +39,28 @@ int Barbarian::getTotalAttack()
 	return totalAttack; 
 }
 
-int Barbarian::makeDefense()
+void Barbarian::makeDefense(int attack)
 {
-	return 0; 
+	makeAttack();
+
+	int oDamage = getTotalAttack();
+
+	//Calculates the total 
+	int damageTotal1 = attack - oDamage - armor;
+
+	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
+
+	if (damageTotal1 <= 0)
+	{
+		std::cout << "\nCharacter received no damage\n\n";
+	}
+	else
+	{
+		int total = getStregthPoints() - damageTotal1;
+		std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << " Total damage (" << total << ") - " << std::endl;
+
+		setStregthPoints(total);
+	}
 }
 
 

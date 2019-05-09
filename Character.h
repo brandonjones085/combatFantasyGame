@@ -19,10 +19,11 @@ public:
 	virtual int getStregthPoints(); 
 	virtual void setStregthPoints(int);
 	virtual void makeAttack();
+	virtual void makeDefense(int); 
 	virtual  void setTotalAttack(int); 
 	virtual int getTotalAttack(); 
-	//virtual int makeDefense(); 
-	//virtual void specialAbility(); 
+	
+	virtual void specialAbility(); 
 
 
 

@@ -7,6 +7,7 @@
 #include "Medusa.h"
 #include "HarryPotter.h"
 #include <iostream>
+#include <cstdlib>
 
 
 
@@ -87,8 +88,10 @@ void Game::runGame()
 
 	int round = 1;
 
-	while (attackStrength > 0 && opponentStrength>0) 
+	while (game) 
 	{
+		
+
 		std::cin.clear();
 		std::cin.sync();
 		std::cin.ignore();
@@ -96,28 +99,103 @@ void Game::runGame()
 		std::cout << "\nRound number: " << round << std::endl;
 
 		attacker->makeAttack();
+; 
+		
 
+		//attacker->specialAbility(); 
+		//opponent->specialAbility(); 
+		
+		int aAttack = attacker->getTotalAttack();
+		int oDamage = opponent->getTotalAttack(); 
 
-		std::cout << "\nAttcker Total:  "<< attacker->getTotalAttack(); 
+		opponent->makeDefense(aAttack); 
 
-		//attacker->setStregthPoints(2);
-
-
-		std::cout << "\n\nAttacker: " << attacker->getStregthPoints(); 
+		int oArmor = opponent->getArmor(); 
 
 		
+		
+
+		std::cout << "\nAttacker strength " << attacker->getStregthPoints() << std::endl;
+		std::cout << "\nAttacker strength " << attacker->getArmor() << std::endl;
+		std::cout << "Opponent strength " << opponent->getStregthPoints() << std::endl;
+		std::cout << "\nOpponent strength " << opponent->getArmor() << std::endl;
+	
+
+		int oStrength = opponent->getStregthPoints(); 
+		
+		if (oStrength < 1)
+		{
+			game = false; 
+			std::cout << "\nThe opponent lost\n"; 
+			std::cout << "\n\nGAME OVER\n\n";
+
+		}
+
+
+
+		std::cout << "\n\nPlease enter for the opponent to attack now\n" << std::endl; 
+
+		round++;
+
+		
+
+		std::cin.clear();
+		std::cin.sync();
+		std::cin.ignore();
+		std::cout << "Round number " << round << std::endl;
 
 		opponent->makeAttack();
+
+		attacker->makeAttack();
+		
+		
+
+		int aDamage = attacker->getTotalAttack();
+		int oAttack = opponent->getTotalAttack();
+
+
+		attacker->makeDefense(oAttack); 
+	
 		
 
 
-		std::cout << "Please enter to continue " << std::endl; 
 
+		std::cout << "\nAttacker strength " << attacker->getStregthPoints() << std::endl;
+		std::cout << "\nAttacker strength " << attacker->getArmor() << std::endl;
+		std::cout << "Opponent strength " << opponent->getStregthPoints() << std::endl;
+		std::cout << "\nOpponent strength " << opponent->getArmor() << std::endl;
+
+
+		int aStrength = attacker->getStregthPoints();
+
+		if (aStrength < 1)
+		{
+			game = false;
+			std::cout << "\nThe attacker lost\n";
+			std::cout << "\n\nGAME OVER\n\n";
+
+		}
+
+		std::cout << "\nPress enter for the attacker to attack now\n";
 		round++;
 		 
 		
 	}
 
+
+	char choice = 'y'; 
+	std::cout << "\nWould you like to play again y/n "; 
+	std::cin >> choice; 
+	if (choice == 'y')
+	{
+		game = true; 
+		runGame();
+	}
+	else
+	{
+		game = false; 
+		std::cout << "\n\nGoodbye\n\n"; 
+	}
 
 }
 
