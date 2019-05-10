@@ -1,4 +1,11 @@
-#pragma once
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The header file for the Vampire class. 
+*******************************************************************************/
+
+
 #include "Character.h"
 
 #ifndef VAMPIRE_HPP
@@ -14,7 +21,7 @@ public:
 	virtual void makeDefense(int);
 	
 	virtual int getTotalAttack();
-	virtual void specialAbility();
+	int specialAbility();
 	~Vampire();
 };
 

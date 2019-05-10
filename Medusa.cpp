@@ -1,3 +1,10 @@
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The Medusa class inherits from the Character class. 
+*******************************************************************************/
+
 #include "Medusa.h"
 #include <cstdlib>
 #include <iostream>
@@ -13,11 +20,16 @@ Medusa::Medusa()
 }
 
 
+/*******************************************************************************
+** Description: This is a virtual funciton inherited from the Character class.
+** It is used when making an attack on the opponent.
+** The total value of the random die are set.
+*******************************************************************************/
 void Medusa::makeAttack()
 {
 	int roll1 = std::rand() % 6 + 1;
 	int roll2 = std::rand() % 6 + 1;
-	std::cout << "Medusa attack\n " << std::endl;
+	std::cout << "************************Medusa Attack**********************\n " << std::endl;
 	std::cout << "Roll 1: " << roll1 << std::endl;
 	std::cout << "Roll 2: " << roll2 << std::endl;
 	int total = roll1 + roll2;
@@ -31,6 +43,11 @@ int Medusa::getTotalAttack()
 	return totalAttack; 
 }
 
+
+/*******************************************************************************
+** Description:  This is used during the characters defense.
+** It takes in an int and uses that value to determine the total damage each round.
+*******************************************************************************/
 void Medusa::makeDefense(int attack)
 {
 	makeAttack();
@@ -42,6 +59,7 @@ void Medusa::makeDefense(int attack)
 
 	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
 
+	//If damage is less than 0
 	if (damageTotal1 <= 0)
 	{
 		std::cout << "\nCharacter received no damage\n\n";
@@ -49,7 +67,7 @@ void Medusa::makeDefense(int attack)
 	else
 	{
 		int total = getStregthPoints() - damageTotal1;
-		std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << " Total damage (" << total << ") - " << std::endl;
+		std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
 
 		setStregthPoints(total);
 	}

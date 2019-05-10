@@ -1,3 +1,10 @@
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The vampire class inherits from the Character class. 
+*******************************************************************************/
+
+
 #include "Vampire.h"
 #include <iostream>
 #include <ctime>
@@ -16,7 +23,7 @@ Vampire::Vampire()
 void Vampire::makeAttack()
 {
 	int roll1 = std::rand() % 12 + 1;
-	std::cout << "Vampire attack\n " << std::endl; 
+	std::cout << "************************Vampire Attack**********************\n " << std::endl; 
 	std::cout << "Roll 1: " << roll1 << std::endl;
 	int total = roll1; 
 	setTotalAttack(total);
@@ -56,10 +63,6 @@ void Vampire::makeDefense(int attack)
 		}
 		else
 		{
-
-
-
-
 			int total = getStregthPoints() - damageTotal1;
 			std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
 
@@ -86,6 +89,8 @@ int Vampire::specialAbility()
 	{
 		return 2; 
 	}
+
+	return 0; 
 }
 
 Vampire::~Vampire()

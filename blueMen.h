@@ -1,4 +1,9 @@
-#pragma once
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description: The header file for the blueMen class. 
+*******************************************************************************/
 
 #include "Character.h"
 
@@ -8,13 +13,15 @@
 
 class blueMen : public Character
 {
+
+
 public:
 	blueMen();
 	virtual void makeAttack();
 	virtual void makeDefense(int);
-	
 	virtual int getTotalAttack();
-	//virtual void specialAbility();
+	int specialAbility(); 
+	void makeDefenseRoll(); 
 	~blueMen();
 };
 

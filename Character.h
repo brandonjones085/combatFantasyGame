@@ -1,3 +1,11 @@
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The header file for the Character class.
+*******************************************************************************/
+
+
 #pragma once
 class Character
 {
@@ -8,6 +16,8 @@ protected:
 	int armor; 
 	int strengthPoints; 
 	int totalAttack; 
+	int totalDefense; 
+	int damageTotal; 
 
 
 public:
@@ -22,10 +32,12 @@ public:
 	virtual void makeDefense(int); 
 	virtual  void setTotalAttack(int); 
 	virtual int getTotalAttack(); 
+	virtual void setTotalDefense(int); 
+	virtual int getTotalDefense(); 
+	virtual void setDamageTotal(int);
+	virtual int getDamageTotal(); 
 	
-	virtual void specialAbility(); 
-
-
+	
 
 	~Character();
 };

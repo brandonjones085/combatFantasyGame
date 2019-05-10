@@ -1,7 +1,15 @@
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The attackMenu function asks for user input and returns an int. The number returned will
+** indicate the users choice of character.
+*******************************************************************************/
+
+
 #include "attackMenu.h"
 #include "validateMenu.h"
 #include "Game.h"
-#include "Barbarian.h"
 #include <iostream>
 
 class Game; 

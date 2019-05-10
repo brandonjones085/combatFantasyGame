@@ -1,4 +1,10 @@
 
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The header file for the Barbarian class. 
+*******************************************************************************/
+
 #include "Character.h"
 
 #pragma once

@@ -1,10 +1,17 @@
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The Barbarian class inherits from the Character class. 
+*******************************************************************************/
+
 #include "Barbarian.h"
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
 
 
-
+//CONSTRUCTOR
 Barbarian::Barbarian()
 {
 	srand(time(NULL)); 
@@ -20,15 +27,23 @@ Barbarian::Barbarian(int a, int s)
 }
 
 
+/*******************************************************************************
+** Description:  This is a virtual funciton inherited from the Character class.
+** It is used when making an attack on the opponent. 
+** The total value of the random die are set. 
+*******************************************************************************/
+
 void Barbarian::makeAttack()
 {
 	int roll1 = std::rand() % 6 + 1; 
 	int roll2 = std::rand() % 6 + 1;
-	std::cout << "Barbarian attack " << std::endl; 
+	std::cout << "************************Barbarian attack**********************" << std::endl; 
 	std::cout << "Roll 1: " << roll1 << std::endl; 
 	std::cout << "Roll 2: " << roll2 << std::endl;
 
 	int total = roll1 + roll2; 
+
+	//sets the total
 	setTotalAttack(total); 
 	std::cout << std::endl; 
 	
@@ -39,8 +54,13 @@ int Barbarian::getTotalAttack()
 	return totalAttack; 
 }
 
+
+/*******************************************************************************
+** Description:  This takes in an int and uses that value to calculate the total damage during each cycle. 
+*******************************************************************************/
 void Barbarian::makeDefense(int attack)
 {
+	//used for defense. 
 	makeAttack();
 
 	int oDamage = getTotalAttack();
@@ -50,6 +70,7 @@ void Barbarian::makeDefense(int attack)
 
 	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
 
+	//This runs if the total is a negative value. 
 	if (damageTotal1 <= 0)
 	{
 		std::cout << "\nCharacter received no damage\n\n";
@@ -57,7 +78,7 @@ void Barbarian::makeDefense(int attack)
 	else
 	{
 		int total = getStregthPoints() - damageTotal1;
-		std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << " Total damage (" << total << ") - " << std::endl;
+		std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
 
 		setStregthPoints(total);
 	}

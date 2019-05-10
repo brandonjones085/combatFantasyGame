@@ -1,4 +1,11 @@
-#pragma once
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The header file for the Game class.
+*******************************************************************************/
+
+
 #ifndef GAME_HPP
 #define GAME_HPP
 
@@ -11,9 +18,6 @@ private:
 	Character *opponent; 
 	bool game = true; 
 	 
-
-
-
 public:
 	Game();
 	
@@ -21,8 +25,6 @@ public:
 	void setAttacker(Character*); 
 	void setOpponent(Character*); 
 	
-	 
-
 	~Game();
 };
 

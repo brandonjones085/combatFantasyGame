@@ -1,3 +1,11 @@
+
+/*******************************************************************************
+** Author:       Brandon Jones
+** Date:         05/10/2019
+** Description:  The opponentMenu function asks for user input and returns an int. The number returned will indicate the 
+** users choice. 
+*******************************************************************************/
+
 #include "opponentMenu.h"
 #include "validateMenu.h"
 #include <iostream>
