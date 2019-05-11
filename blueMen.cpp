@@ -53,6 +53,8 @@ int blueMen::getTotalAttack()
 
 void blueMen::makeDefenseRoll()
 {
+
+
 	int special = specialAbility(); 
 
 	if (special == 3)
@@ -105,17 +107,28 @@ void blueMen::makeDefenseRoll()
 void blueMen::makeDefense( int attack)
 {
 	
+	//Medusa uses her special ability
+	if (attack == 100)
+	{
+		std::cout << "\n\n=========Medusa just turned you to stone!!===========\n\n";
+		strengthPoints = 0;
+
+	}
+	else
+	{
+
+
 		makeDefenseRoll();
 
 		int oDamage = getTotalDefense();
 
 		//Calculates the total 
 		int damageTotal1 = attack - oDamage - armor;
+
+
 		
 
-		std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
-
-		setDamageTotal(damageTotal1); 
+		setDamageTotal(damageTotal1);
 
 
 		if (damageTotal1 <= 0)
@@ -129,6 +142,8 @@ void blueMen::makeDefense( int attack)
 
 			setStregthPoints(total);
 		}
+
+	}
 
 
 }

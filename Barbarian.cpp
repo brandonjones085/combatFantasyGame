@@ -60,15 +60,31 @@ int Barbarian::getTotalAttack()
 *******************************************************************************/
 void Barbarian::makeDefense(int attack)
 {
-	//used for defense. 
-	makeAttack();
+	//Medusa uses her special ability
+	if (attack == 100)
+	{
+		std::cout << "\n\n=========Medusa just turned you to stone!!===========\n\n"; 
+		strengthPoints = 0; 
 
-	int oDamage = getTotalAttack();
+	}
+	else {
+
+	}
+
+
+	//used for defense. 
+	int roll1 = std::rand() % 6 + 1;
+	int roll2 = std::rand() % 6 + 1;
+	std::cout << "************************Barbarian Defense**********************" << std::endl;
+	std::cout << "Roll 1: " << roll1 << std::endl;
+	std::cout << "Roll 2: " << roll2 << std::endl;
+
+	int oDamage = roll1 + roll2; 
 
 	//Calculates the total 
 	int damageTotal1 = attack - oDamage - armor;
 
-	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
+	
 
 	//This runs if the total is a negative value. 
 	if (damageTotal1 <= 0)

@@ -33,6 +33,13 @@ void Medusa::makeAttack()
 	std::cout << "Roll 1: " << roll1 << std::endl;
 	std::cout << "Roll 2: " << roll2 << std::endl;
 	int total = roll1 + roll2;
+
+	//This is used for the special ability
+	if (total == 12)
+	{
+		total = 100; 
+	}
+	
 	setTotalAttack(total);
 	std::cout << std::endl;
 
@@ -50,26 +57,43 @@ int Medusa::getTotalAttack()
 *******************************************************************************/
 void Medusa::makeDefense(int attack)
 {
-	makeAttack();
-
-	int oDamage = getTotalAttack();
-
-	//Calculates the total 
-	int damageTotal1 = attack - oDamage - armor;
-
-	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
-
-	//If damage is less than 0
-	if (damageTotal1 <= 0)
+	//Medusa uses her special ability
+	if (attack == 100)
 	{
-		std::cout << "\nCharacter received no damage\n\n";
+		std::cout << "\n\n=========Medusa just turned you to stone!!===========\n\n";
+		strengthPoints = 0;
+
 	}
 	else
 	{
-		int total = getStregthPoints() - damageTotal1;
-		std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
 
-		setStregthPoints(total);
+		int roll1 = std::rand() % 6 + 1;
+
+		std::cout << "************************Medusa Defense**********************\n " << std::endl;
+		std::cout << "Roll 1: " << roll1 << std::endl;
+
+		int total = roll1;
+
+		int oDamage = total; 
+
+		//Calculates the total 
+		int damageTotal1 = attack - oDamage - armor;
+
+		
+
+		//If damage is less than 0
+		if (damageTotal1 <= 0)
+		{
+			std::cout << "\nCharacter received no damage\n\n";
+		}
+		else
+		{
+			int total = getStregthPoints() - damageTotal1;
+			std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
+
+			setStregthPoints(total);
+		}
+
 	}
 }
 

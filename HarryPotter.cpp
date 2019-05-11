@@ -37,6 +37,17 @@ void HarryPotter::makeAttack()
 	std::cout << std::endl;
 }
 
+void HarryPotter::setCount(int i)
+{
+	count = i; 
+}
+
+int HarryPotter::returnCount()
+{
+	return count;
+}
+
+
 int HarryPotter::getTotalAttack()
 {
 	return totalAttack; 
@@ -48,26 +59,73 @@ int HarryPotter::getTotalAttack()
 *******************************************************************************/
 void HarryPotter::makeDefense(int attack)
 {
-	makeAttack();
+	int c = returnCount(); 
 
-	int oDamage = getTotalAttack();
-
-	//Calculates the total 
-	int damageTotal1 = attack - oDamage - armor;
-
-	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
-
-	//If damage is less than 0
-	if (damageTotal1 <= 0)
+	if (c < 2)
 	{
-		std::cout << "\nCharacter received no damage\n\n";
-	}
-	else
-	{
-		int total = getStregthPoints() - damageTotal1;
-		std::cout <<  "Opponent strength (" << getStregthPoints() << ") -"  << " Damage Total (" << damageTotal1 <<") " << "= Total damage (" << total << ") - "  << std::endl;
+		//Medusa turns to stone.
+		if (attack == 100)
+		{
+			std::cout << "\n\n=========Medusa just turned you to stone!!===========\n\n";
+			std::cout << "\n///////////Harry Potter Used His Hogwarts Ability\\\\\\\\n";
+			setStregthPoints(20); 
+			c += c; 
+			setCount(c); 
+			
+		}
+		else
+		{
 
-		setStregthPoints(total);
+
+			int roll1 = std::rand() % 6 + 1;
+			int roll2 = std::rand() % 6 + 1;
+			std::cout << "************************Harry Potter Defend**********************\n " << std::endl;
+			std::cout << "Roll 1: " << roll1 << std::endl;
+			std::cout << "Roll 2: " << roll2 << std::endl;
+			int total = roll1 + roll2;
+
+			int oDamage = total;
+
+			//Calculates the total 
+			int damageTotal1 = attack - oDamage - armor;
+
+			
+
+		
+			//If damage is less than 0
+			if (damageTotal1 <= 0)
+			{
+				std::cout << "\nCharacter received no damage\n\n";
+			}
+			else
+			{
+				int total = getStregthPoints() - damageTotal1;
+				std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") " << std::endl;
+				setStregthPoints(total);
+
+
+				if (strengthPoints <= 0 && count < 1)
+				{
+					setStregthPoints(20);
+					c += c;
+					setCount(c);
+
+					std::cout << "\n\n\nHarry Potter used Hoggwarts\n\n"; 
+					int total = getStregthPoints() - damageTotal1;
+					std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") " << std::endl;
+				}
+				
+				else
+				{
+					
+					setStregthPoints(total);
+				}
+
+			}
+
+		}
+
+		
 	}
 }
 

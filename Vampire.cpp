@@ -20,6 +20,12 @@ Vampire::Vampire()
 }
 
 
+/*******************************************************************************
+** Description:  This is a virtual funciton inherited from the Character class.
+** It is used when making an attack on the opponent.
+** The total value of the random die are set.
+*******************************************************************************/
+
 void Vampire::makeAttack()
 {
 	int roll1 = std::rand() % 12 + 1;
@@ -37,40 +43,57 @@ int Vampire::getTotalAttack()
 	return totalAttack; 
 }
 
+
+/*******************************************************************************
+** Description:  This is used for the defense of an opponents attack
+*******************************************************************************/
 void Vampire::makeDefense(int attack)
 {
-	makeAttack(); 
 
-	int oDamage = getTotalAttack(); 
+	int num = specialAbility();
 
-
-	int num = specialAbility(); 
-
-	//Calculates the total 
-	int damageTotal1 = attack - oDamage - armor;
-
-	std::cout << "Attack " << attack << " - " << oDamage << " - " << armor << std::endl;
-
-	if (damageTotal1 <= 0)
+	//Medusa uses her special ability and vampire doesn't use charm
+	if (attack == 100 && num != 1)
 	{
-		std::cout << "\nCharacter received no damage\n\n";
+		std::cout << "\n\n=========Medusa just turned you to stone!!===========\n\n";
+		strengthPoints = 0;
+
 	}
 	else
 	{
-		if (num ==1)
+
+		int roll1 = std::rand() % 6 + 1;
+		std::cout << "************************Vampire Defense**********************\n " << std::endl;
+		std::cout << "Roll 1: " << roll1 << std::endl;
+		int total = roll1;
+
+		int oDamage = roll1;
+
+		//Calculates the total 
+		int damageTotal1 = attack - oDamage - armor;
+
+		
+
+		if (damageTotal1 <= 0)
 		{
-			std::cout << "\nVampire used charm to receive no damage\n";
+			std::cout << "\nCharacter received no damage\n\n";
 		}
 		else
 		{
-			int total = getStregthPoints() - damageTotal1;
-			std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
+			if (num == 1)
+			{
+				std::cout << "\nVampire used charm to receive no damage\n";
+			}
+			else
+			{
+				int total = getStregthPoints() - damageTotal1;
+				std::cout << "Opponent strength (" << getStregthPoints() << ") -" << " Damage Total (" << damageTotal1 << ") " << "= Total damage (" << total << ") - " << std::endl;
 
-			setStregthPoints(total);
+				setStregthPoints(total);
 
+			}
 		}
 	}
-
 
 }
 

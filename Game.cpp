@@ -130,9 +130,9 @@ void Game::runGame()
 		
 		//Shows all the totals
 		std::cout << "\nAttacker strength " << attacker->getStregthPoints() << std::endl;
-		std::cout << "\nAttacker armor " << attacker->getArmor() << std::endl;
-		std::cout << "Opponent strength " << opponent->getStregthPoints() << std::endl;
-		std::cout << "\nOpponent strength " << opponent->getArmor() << std::endl;
+		std::cout << "Attacker armor " << attacker->getArmor() << std::endl;
+		std::cout << "\nOpponent strength " << opponent->getStregthPoints() << std::endl;
+		std::cout << "Opponent armor " << opponent->getArmor() << std::endl;
 	
 
 		//stores new strengthPoint value
@@ -144,6 +144,7 @@ void Game::runGame()
 			game = false; 
 			std::cout << "\nThe opponent lost\n"; 
 			std::cout << "\n\nGAME OVER\n\n";
+			
 
 		}
 
@@ -174,9 +175,9 @@ void Game::runGame()
 	
 		//Shows new totals
 		std::cout << "\nAttacker strength " << attacker->getStregthPoints() << std::endl;
-		std::cout << "\nAttacker armor " << attacker->getArmor() << std::endl;
-		std::cout << "Opponent strength " << opponent->getStregthPoints() << std::endl;
-		std::cout << "\nOpponent strength " << opponent->getArmor() << std::endl;
+		std::cout << "Attacker armor " << attacker->getArmor() << std::endl;
+		std::cout << "\nOpponent strength " << opponent->getStregthPoints() << std::endl;
+		std::cout << "Opponent armor " << opponent->getArmor() << std::endl;
 
 		//Stores new value in variable
 		int aStrength = attacker->getStregthPoints();
@@ -187,6 +188,7 @@ void Game::runGame()
 			game = false;
 			std::cout << "\nThe attacker lost\n";
 			std::cout << "\n\nGAME OVER\n\n";
+			
 
 		}
 

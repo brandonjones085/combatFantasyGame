@@ -9,14 +9,18 @@
 
 class HarryPotter : public Character
 {
+private: 
+	int count = 0; 
 public:
 	HarryPotter();
+	void setCount(int); 
+	int returnCount(); 
 
 	virtual void makeAttack();
 	virtual void makeDefense(int);
 	
 	virtual int getTotalAttack();
-	//virtual void specialAbility();
+	
 	~HarryPotter();
 };
 
